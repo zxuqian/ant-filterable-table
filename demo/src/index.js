@@ -29,6 +29,6 @@ function Demo() {
   </FilterableTable>
 }
 
-const completedFilters = [{id: 1, name: "yes", value: true}, {id: 2, name: "no", value: false}, {id: 2, name: "no", value: false}, {id: 3, name: "no", value: false}, {id: 4, name: "no", value: false}];
+const completedFilters = [{id: 1, name: "yes", value: true}, {id: 2, name: "no", value: false}];
 
 render(<Demo />, document.querySelector('#demo'))
