@@ -1,7 +1,7 @@
 {
   "name": "ant-filterable-table",
-  "version": "1.0.0",
-  "description": "ant-filterable-table React component",
+  "version": "0.0.1-alpha1",
+  "description": "A filterable table component for Ant design",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -24,15 +24,27 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "antd": "^3.22.0",
     "nwb": "0.23.x",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-request-hook-client": "^0.1.0-beta1"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Xuqian Zhang",
+  "homepage": "https://github.com/zxuqian/ant-filterable-table",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/zxuqian/ant-filterable-table",
   "keywords": [
-    "react-component"
+    "react-component",
+    "ant-design",
+    "react",
+    "react hooks",
+    "hooks",
+    "filterable table",
+    "table",
+    "filterable",
+    "sort",
+    "filter",
+    "data list"
   ]
 }
