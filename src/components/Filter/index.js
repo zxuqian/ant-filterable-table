@@ -3,23 +3,24 @@ import PropTypes from "prop-types";
 
 
 import { Divider, Tag } from "antd";
+import useTagSelection from "../useTagSelection";
 
 const Filter = props => {
   const {
     tags = [],
-    selected, // controlled
+    selected,
     name,
+    label,
     extra,
     additionalFilters,
     multiSelectable = true,
     children,
     onChange,
-    showLabel = true,
     tagStyle,
     ...rest
   } = props;
 
-  const [selectedTags, handleTagSelection, isTagChecked] = useTagSelection(
+  const {handleTagSelection, isTagChecked} = useTagSelection(
     onChange,
     multiSelectable,
     selected
@@ -28,20 +29,21 @@ const Filter = props => {
   const { CheckableTag } = Tag;
 
   return (
-    <Fragment>
-      {showLabel && (
+    <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+      {label && (
         <p
           style={{
             marginRight: "20px",
             minWidth: "24px",
             marginTop: "4px",
-            flex: "0 0 auto"
+            maxWidth: "120px",
+            flex: "1",
           }}
         >
-          {name}
+          {label}: 
         </p>
       )}
-      <div flex="1 1 auto">
+      <div style={{flex: "10"}}>
         {/* tags */}
         <div flex="1 1 auto" d="column">
           <div align="flex-start">
@@ -50,7 +52,7 @@ const Filter = props => {
               {tags.map(tag => (
                 <CheckableTag
                   style={{ marginBottom: "12px", ...tagStyle }}
-                  key={tag.name}
+                  key={tag.id}
                   checked={isTagChecked(tag)}
                   onChange={checked => handleTagSelection(tag, checked)}
                 >
@@ -64,7 +66,7 @@ const Filter = props => {
         </div>
         {extra}
       </div>
-    </Fragment>
+    </div>
   );
 };
 

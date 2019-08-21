@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import usePagination from "../usePagination";
 import { Table } from "antd";
+import useFilters from "../useFilters";
 
 
 /**
@@ -26,13 +27,28 @@ const FilterableTable = ({
   dataSource,
   loading,
   tableProps = {},
+  onFiltersChange,
 }) => {
   // const [filters, setFilters] = useState({});
   // const [after, pageSize, handlePageChange] = usePagination(1, 10);
 
+  const {allFilters, handleTagChange} = useFilters({}, allFilters => onFiltersChange && onFiltersChange(allFilters));
+
+  // deal with children filters
+  const filters = React.Children.map(children, (child, index) => {
+    // console.log(child);
+    const {props: childProps} = child;
+    const {name} = childProps;
+
+    return React.cloneElement(child, {
+      onChange: handleTagChange(name),
+      selected: allFilters[name]
+    })
+  })
+
   return (
     <Fragment>
-      {children}
+      {filters}
       <Table
         loading={loading}
         dataSource={dataSource}

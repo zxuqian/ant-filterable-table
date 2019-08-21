@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 const useTagSelection = (
   onChange,
   multiSelectable,
-  selectedTags = [] // uncontrolled
+  selectedTags = [] 
 ) => {
   const handleTagSelection = (tag, checked) => {
     let newSelectedTags = [];
@@ -39,7 +39,7 @@ const useTagSelection = (
   const isTagChecked = tag =>
     selectedTags.find(selectedTag => selectedTag.name === tag.name);
 
-  return [selectedTags, handleTagSelection, isTagChecked];
+  return {selectedTags, handleTagSelection, isTagChecked};
 };
 
 export default useTagSelection;

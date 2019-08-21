@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import { Tag } from "antd";
 
@@ -18,7 +18,7 @@ const SelectedFilters = props => {
     ...rest
   } = props;
   return (
-    <StyledSelectedFilters style={style}>
+    <Fragment style={style}>
       {showLabel && (
         <p style={{ marginRight: "20px", minWidth: "24px", marginTop: "3px" }}>
           {name || "已选"}
@@ -44,7 +44,7 @@ const SelectedFilters = props => {
           ))}
         </div>
       </div>
-    </StyledSelectedFilters>
+    </Fragment>
   );
 };
 

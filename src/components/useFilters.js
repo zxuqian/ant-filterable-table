@@ -173,7 +173,7 @@ const useFilters = (defaultFilters, onChangeCallback) => {
     onChangeCallback && onChangeCallback(newFilterValues);
   };
 
-  return [
+  return {
     allFilters,
     selectedFilters,
     handleTagChange,
@@ -184,7 +184,7 @@ const useFilters = (defaultFilters, onChangeCallback) => {
     setSelectedFilters,
     handleClearTags,
     handleSingleSelectdTagClose
-  ];
+  };
 };
 
 export default useFilters;
