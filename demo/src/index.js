@@ -22,7 +22,7 @@ function Demo() {
   
 
   return <FilterableTable columns={columns} dataSource={data || []} loading={loading === true} onFiltersChange={setFilters}>
-    <Filter label="Completeness" name="completed" tags={completedFilters} multiSelectable={false} />
+    <Filter label="Completed" name="completed" tags={completedFilters} multiSelectable={false} />
 
     {/* You can define as many filters as you want */}
 
