@@ -1,6 +1,6 @@
 {
   "name": "ant-filterable-table",
-  "version": "0.0.1-alpha1",
+  "version": "0.0.1-alpha2",
   "description": "A filterable table component for Ant design",
   "main": "lib/index.js",
   "module": "es/index.js",
