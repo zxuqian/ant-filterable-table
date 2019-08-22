@@ -21,7 +21,8 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x"
+    "react": "16.x",
+    "antd": "3.x"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "1.x",
