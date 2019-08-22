@@ -37,6 +37,8 @@ function App() {
     variables.completed = filters.completed[0].value;
   }
 
+  // using react-request-hook-client library
+  // https://github.com/zxuqian/react-request-hook-client
   const { loading, data } = useRequest({
     url: "https://jsonplaceholder.typicode.com/todos",
     variables
